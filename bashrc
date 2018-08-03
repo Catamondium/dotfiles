@@ -1,12 +1,13 @@
 # ~/.bashrc: executed by bash(1) for non-login shells.
 # see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
 # for examples
-
 # If not running interactively, don't do anything
 case $- in
     *i*) ;;
       *) return;;
 esac
+
+reset="\[`tput sgr0`\]"
 
 # don't put duplicate lines or lines starting with space in the history.
 # See bash(1) for more options
@@ -22,6 +23,14 @@ HISTFILESIZE=2000
 # check the window size after each command and, if necessary,
 # update the values of LINES and COLUMNS.
 shopt -s checkwinsize
+color_prompt=yes
+# chroot indicator
+if [ "$color_prompt" = yes ]; then
+	CHROOT='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]'
+  else
+	  CHROOT='${debian_chroot:+($debian_chroot)}$reset'
+  fi
+  unset color_prompt force_color_prompt
 
 # If set, the pattern "**" used in a pathname expansion context will
 # match all files and zero or more directories and subdirectories.
@@ -77,7 +86,6 @@ fi
 ### custom ###
 export EDITOR='vim'
 ### pallete
-reset="\[`tput sgr0`\]"
 red="\[`tput setaf 1`\]"
 purple="\[`tput setaf 5`\]"
 white="\[`tput setaf 7`\]"
@@ -87,11 +95,11 @@ bold="\[`tput bold`\]"
 ### PS1 override
 
 parse_git_branch() {
-	     git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/'
-     }
+	git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/'
+}
 
-usrhost="$cyan\u$white@$purple\h"
-dirgit="$white$bold\w$reset\$(parse_git_branch)"
+usrhost="$reset$cyan\u$white@$purple\h"
+dirgit="$white$bold\w$reset$purple\$(parse_git_branch)$white"
 
 
-export PS1="$usrhost:$dirgit\\$> $reset"
+export PS1="$CHROOT$usrhost:$dirgit\\$> $reset"
