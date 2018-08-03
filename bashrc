@@ -116,4 +116,24 @@ if ! shopt -oq posix; then
   fi
 fi
 
-export EDITOR='emacs'
+### custom ###
+
+export EDITOR='vim'
+### PS1 override
+### pallete
+reset="\[`tput sgr0`\]"
+red="\[`tput setaf 1`\]"
+purple="\[`tput setaf 5`\]"
+white="\[`tput setaf 7`\]"
+cyan="\[`tput setaf 6`\]"
+bold="\[`tput bold`\]"
+
+#function branch() { #in progress
+#	local _branch=`git branch 2> /dev/null | awk '(/^*/) {printf $2}'`
+#	if [[ -n $_branch ]] ; then
+#		_branch="::$purple$_branch$white"
+#	fi
+#	echo "$_branch"
+#}
+
+export PS1="$cyan\u$white@$purple\h$white:$bold\w$reset \\$>" #`branch` \\$> "
