@@ -136,4 +136,4 @@ bold="\[`tput bold`\]"
 #	echo "$_branch"
 #}
 
-export PS1="$cyan\u$white@$purple\h$white:$bold\w$reset \\$>" #`branch` \\$> "
+export PS1="$cyan\u$white@$purple\h$white:$bold\w$reset \\$> " #`branch` \\$> "
