@@ -86,16 +86,12 @@ bold="\[`tput bold`\]"
 
 ### PS1 override
 
-function branch() { #in progress
-	local _branch=`git branch 2> /dev/null | awk '(/^*/) {printf $2}'`
-	if [[ -n $_branch ]] ; then
-		_branch="::$purple$_branch$white"
-	fi
-	echo "$_branch"
-}
+parse_git_branch() {
+	     git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/'
+     }
 
 usrhost="$cyan\u$white@$purple\h"
-dirgit="$white$bold\w$reset" #`$branch`"
+dirgit="$white$bold\w$reset\$(parse_git_branch)"
 
 
 export PS1="$usrhost:$dirgit\\$> $reset"
