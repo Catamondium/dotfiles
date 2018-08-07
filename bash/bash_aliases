@@ -1,0 +1,7 @@
+alias rm='rm -i'
+alias mv='mv -i'
+# ls aliases
+alias ll='ls -alF'
+alias la='ls -A'
+alias l='ls -CF'
+alias lua='lua5.3'
