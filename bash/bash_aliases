@@ -1,7 +1,10 @@
+# accident evasion
 alias rm='rm -i'
 alias mv='mv -i'
 # ls aliases
 alias ll='ls -alF'
 alias la='ls -A'
 alias l='ls -CF'
+# misc
 alias lua='lua5.3'
+alias g++='g++ -std=c++17'

@@ -58,4 +58,4 @@ augroup vimrc
   au BufWinEnter * if &fdm == 'indent' | setlocal foldmethod=manual | endif
 augroup END
 
-colorscheme dracula " set colours
+colorscheme darkblue " set colours
