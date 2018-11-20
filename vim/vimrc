@@ -58,4 +58,7 @@ augroup vimrc
   au BufWinEnter * if &fdm == 'indent' | setlocal foldmethod=manual | endif
 augroup END
 
+set number " absolute current line
+set relativenumber " relative surrounding lines
+
 colorscheme darkblue " set colours
