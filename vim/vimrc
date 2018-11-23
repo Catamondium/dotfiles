@@ -61,6 +61,9 @@ augroup END
 " enable spelling completion when spellcheck active
 set complete=.,w,b,u,t,i,kspell 
 
+" enable spell checking for commit messages
+autocmd FileType gitcommit setlocal spell
+
 set number " absolute current line
 set relativenumber " relative surrounding lines
 
