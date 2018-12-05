@@ -67,5 +67,6 @@ autocmd FileType gitcommit setlocal spell
 set number " absolute current line
 set relativenumber " relative surrounding lines
 set tabstop=4 " Shorten tab expansions
+set shiftwidth=4
 
 colorscheme darkblue " set colours
