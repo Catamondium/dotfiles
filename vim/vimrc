@@ -69,4 +69,9 @@ set relativenumber " relative surrounding lines
 set tabstop=4 " Shorten tab expansions
 set shiftwidth=0 " always match tabstop
 
+" highlight managment
+" " disable upon insert mode
+set hlsearch
+:nnoremap i :noh<cr>i
+
 colorscheme darkblue " set colours
