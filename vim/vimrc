@@ -66,7 +66,7 @@ autocmd FileType gitcommit setlocal spell
 
 set number " absolute current line
 set relativenumber " relative surrounding lines
-set tabstop=4 " Shorten tab expansions
+set tabstop=8 " Shorten tab expansions
 set shiftwidth=0 " always match tabstop
 
 " highlight managment

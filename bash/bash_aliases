@@ -5,6 +5,7 @@ alias mv='mv -i'
 alias ll='ls -alF'
 alias la='ls -A'
 alias l='ls -CF'
-# misc
+# programming
 alias lua='lua5.3'
 alias g++='g++ -std=c++17'
+alias indent='indent -kr'
