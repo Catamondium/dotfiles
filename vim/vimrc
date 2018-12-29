@@ -64,10 +64,13 @@ set complete=.,w,b,u,t,i,kspell
 " enable spell checking for commit messages
 autocmd FileType gitcommit setlocal spell
 
-set number " absolute current line
+set number         " absolute current line
 set relativenumber " relative surrounding lines
-set tabstop=8 " Shorten tab expansions
-set shiftwidth=0 " always match tabstop
+
+set autoindent
+set cindent
+set tabstop=4      " K&R indentation
+set shiftwidth=0   " always match tabstop
 
 " highlight managment
 " " disable upon insert mode
