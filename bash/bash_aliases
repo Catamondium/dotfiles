@@ -7,5 +7,5 @@ alias la='ls -A'
 alias l='ls -CF'
 # programming
 alias lua='lua5.3'
-alias g++='g++ -std=c++17'
+alias g++='g++-8 -std=c++17'
 alias indent='indent -kr'
