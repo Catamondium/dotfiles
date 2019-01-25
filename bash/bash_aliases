@@ -1,6 +1,7 @@
 # accident evasion
 alias rm='rm -i'
 alias mv='mv -i'
+alias cropdir='cropdir -i'
 # ls aliases
 alias ll='ls -alF'
 alias la='ls -A'
