@@ -64,6 +64,9 @@ set complete=.,w,b,u,t,i,kspell
 " enable spell checking for commit messages
 autocmd FileType gitcommit setlocal spell
 
+autocmd BufNewFile,BufRead *.kt setfiletype kotlin
+autocmd BufNewFile,BufRead *.kts setfiletype kotlin
+
 set number         " absolute current line
 set relativenumber " relative surrounding lines
 
