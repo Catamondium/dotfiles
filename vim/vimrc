@@ -74,6 +74,8 @@ set autoindent
 set cindent
 set tabstop=4      " K&R indentation
 set shiftwidth=0   " always match tabstop
+set expandtab	   " spaces
+set smarttab
 
 " highlight managment
 " " disable upon insert mode
