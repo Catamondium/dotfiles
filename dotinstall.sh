@@ -11,8 +11,15 @@ prelude() {
     echo "PRELUDE"
     echo "Setup git over ssh"
     read -n 1
-    echo "Install Python3 & py3 venv"
-    read -n 1
+
+    if ! [ $( command -v python3 ) ] ; then
+        echo "Install Python3 & py3 venv"
+        read -n 1
+    fi
+
+    if ! [ $( command -v bash ) ] ; then
+        echo "Install bash"
+    fi
 }
 
 prepareGit() {
@@ -42,14 +49,19 @@ linkBash() {
     if [ -f ~/.bash_aliases ] ; then
         mv ~/.bash_aliases ~/bash_aliases.bak
     fi
-    ln -s ~/git/dotfiles/bash/bash_aliases ~/.bash_aliases
+    ln -s ~/git/dotfiles/bash/bash_aliases.sh ~/.bash_aliases
 
     if [ -f ~/.bashrc ] ; then
         mv ~/.bashrc ~/bashrc.bak
     fi
-    ln -s ~/git/dotfiles/bash/bashrc ~/.bashrc
+    ln -s ~/git/dotfiles/bash/bashrc.sh ~/.bashrc
 
-    echo "Prepared aliases & bashrc"
+    if [ -f ~/.bash_profile ] ; then
+        mv ~/.bash_profile ~/bash_profile.bak
+    fi
+    ln -s ~/git/dotfiles/bash/bash_profile.sh ~/.bash_profile
+
+    echo "Prepared aliases & bashrc & bash_profile"
 }
 
 prepareRust() {
