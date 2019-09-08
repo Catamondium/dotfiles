@@ -79,7 +79,11 @@ if ! shopt -oq posix; then
 fi
 
 ### custom ###
-export EDITOR='vim'
+if [ $( command -v gedit ) ] ; then
+  export EDITOR='gedit'
+else
+  export EDITOR='vi'
+fi
 ### pallete
 red="\[`tput setaf 1`\]"
 purple="\[`tput setaf 5`\]"
