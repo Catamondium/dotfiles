@@ -1,5 +1,10 @@
 #!/bin/sh
 
+# USAGE notes
+# read -n 1, doesn't always work
+# causing this installer to work autonomously unless interrupted by sudo
+# may need redesign for several runs
+
 fixGnome() {
     gsettings set org.gnome.settings-daemon.peripherals.touchscreen orientation-lock true
     gsettings set org.gnome.settings-daemon.plugins.orientation active false
@@ -13,8 +18,12 @@ prelude() {
     read -n 1
 
     if ! [ $( command -v python3 ) ] ; then
-        echo "Install Python3 & py3 venv"
-        read -n 1
+        if ! [ $( command -v apt )] ; then
+            echo "Install Python3 & py3 venv"
+            read -n 1
+        else # Self serve on apt-based systems (Ubuntu / Pop_os)
+            sudo apt install python3 python3-venv
+        fi
     fi
 
     if ! [ $( command -v bash ) ] ; then
@@ -30,10 +39,7 @@ prepareGit() {
 
     cd ~/git
 
-    if ! [ -d ~/git/dotfiles ] ; then
-        git clone git@github.com:Catamondium/dotfiles.git
-    fi
-
+    git clone git@github.com:Catamondium/dotfiles.git
     git clone git@github.com:Catamondium/scratch.git
     git clone git@github.com:Catamondium/projects.git
     cd
@@ -66,7 +72,7 @@ linkBash() {
 
 prepareRust() {
     echo "Preparing Rust"
-    curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+    curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh # Copied from site, may change
     . ~/.cargo/env
 }
 
@@ -103,6 +109,7 @@ linkPythons() {
     echo "Linking python scripts"
     echo "Preparing venvs"
 
+    # Install environ dispatcher
     sudo ln -s ~/git/projects/Python/envrun.py /usr/bin/envrun
     sudo ln -s ~/git/projects/Python/envrun.py /bin/envrun
 
@@ -114,7 +121,7 @@ linkPythons() {
     . bin/activate
     pip install -r requirements
     deactivate
-    echo "Get upDir token.secret for Dropbox API"
+    echo "Get upDir token.secret for Dropbox API" # With `read` problems, probably better enumerating after
     read -n 1
     sudo ln -s ~/git/projects/Python/upDir/upDir.py /usr/bin/updir
     echo "Installed updir"
@@ -139,7 +146,7 @@ init() {
     prelude
     prepareGit
     prepareRust
-    forcePython3
+    forcePython3 # plausable overkill
     echo "Initialization complete"
 }
 
