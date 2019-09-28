@@ -26,3 +26,5 @@ else
 fi
 
 ### END SSH AGENT ###
+
+export PATH="$HOME/.cargo/bin:$PATH"

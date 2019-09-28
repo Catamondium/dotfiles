@@ -77,6 +77,7 @@ prepareRust() {
 }
 
 linkRusts() {
+    source ~/.bashrc # needed for ~/.cargo/bin PATH
     echo "Installing Rust binaries"
     cd ~/git/projects/Rust
 

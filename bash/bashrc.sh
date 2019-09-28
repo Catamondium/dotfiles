@@ -104,3 +104,5 @@ dirgit="$white$bold\w$reset$purple\$(parse_git_branch)$white"
 
 
 export PS1="$CHROOT$usrhost:$dirgit\\$> $reset"
+export PATH="$HOME/.cargo/bin:$PATH"
+
