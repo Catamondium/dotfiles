@@ -114,7 +114,7 @@ linkPythons() {
     sudo ln -s ~/git/projects/Python/envrun.py /usr/bin/envrun
     sudo ln -s ~/git/projects/Python/envrun.py /bin/envrun
 
-    sudo ln -s ~/git/projects/Python/dedupDir/dedupDir.py /usr/bin/dedupdir
+    sudo ln -s ~/git/projects/Python/dedupdir/dedupdir.py /usr/bin/dedupdir
     echo "Linked envrun & dedupdir"
 
     cd ~/git/projects/Python3/upDir
@@ -124,7 +124,7 @@ linkPythons() {
     deactivate
     echo "Get upDir token.secret for Dropbox API" # With `read` problems, probably better enumerating after
     read -n 1
-    sudo ln -s ~/git/projects/Python/upDir/upDir.py /usr/bin/updir
+    sudo ln -s ~/git/projects/Python/updir/updir.py /usr/bin/updir
     echo "Installed updir"
 
     cd ../calbot
