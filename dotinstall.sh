@@ -102,6 +102,7 @@ linkRusts() {
 }
 
 forcePython3() {
+    sudo apt install python3-venv
     sudo cp /usr/bin/python3 /usr/bin/python
     echo "Forced Python3"
 }
@@ -117,7 +118,7 @@ linkPythons() {
     sudo ln -s ~/git/projects/Python/dedupdir/dedupdir.py /usr/bin/dedupdir
     echo "Linked envrun & dedupdir"
 
-    cd ~/git/projects/Python3/upDir
+    cd ~/git/projects/Python/updir
     python3 -m venv .
     . bin/activate
     pip install -r requirements

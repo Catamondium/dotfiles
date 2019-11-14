@@ -104,5 +104,9 @@ dirgit="$white$bold\w$reset$purple\$(parse_git_branch)$white"
 
 
 export PS1="$CHROOT$usrhost:$dirgit\\$> $reset"
-export PATH="$HOME/.cargo/bin:$PATH"
+export PATH="$HOME/.cargo/bin:$HOME/.nimble/bin:$PATH"
 
+
+export INTELFPGAOCLSDKROOT="/home/liambirtles/intelFPGA_pro/19.3/hld"
+
+export QSYS_ROOTDIR="/home/liambirtles/intelFPGA_pro/19.3/qsys/bin"
