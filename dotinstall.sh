@@ -47,8 +47,8 @@ prepareGit() {
 
 linkBash() {
     echo "Linking Bash scripts"
-    sudo ln ~/git/projects/Bash/fsplit.sh /usr/bin/fsplit
-    sudo ln ~/git/projects/Bash/cropdir.sh /usr/bin/cropdir
+    sudo ln ~/git/projects/Bash/fsplit.sh ~/bin/fsplit
+    sudo ln ~/git/projects/Bash/cropdir.sh ~/bin/cropdir
     echo "Installed fsplit & cropdir"
 
     echo "Preparing configs"
@@ -83,20 +83,20 @@ linkRusts() {
 
     cd addtime
     cargo build --release
-    sudo cp ./target/release/addtime /usr/bin/addtime
+    sudo cp ./target/release/addtime ~/bin/addtime
     echo "Installed addtime"
 
     cd ../mol
     cargo build --release
-    sudo cp ./target/release/mol /usr/bin/mol
+    cp ./target/release/mol ~/bin/mol
     echo "Installed mol"
 
     cd ../rname/bin
     cargo build --release --bin client --features="build-bin"
     cargo build --release --bin rnamed --features="build-daemon"
     cd ..
-    sudo cp ./target/release/client /usr/bin/rname
-    sudo cp ./target/release/rnamed /usr/bin/rnamed
+    cp ./target/release/client ~/bin/rname
+    cp ./target/release/rnamed ~/bin/rnamed
     echo "Installed rname & rnamed"
     cd
 }
@@ -113,9 +113,9 @@ linkPythons() {
 
     # Install environ dispatcher
     sudo ln -s ~/git/projects/Python/envrun.py /usr/bin/envrun
-    sudo ln -s ~/git/projects/Python/envrun.py /bin/envrun
+    ln -s ~/git/projects/Python/envrun.py ~/envrun
 
-    sudo ln -s ~/git/projects/Python/dedupdir/dedupdir.py /usr/bin/dedupdir
+    ln -s ~/git/projects/Python/dedupdir/dedupdir.py ~/bin/dedupdir
     echo "Linked envrun & dedupdir"
 
     cd ~/git/projects/Python/updir
@@ -125,7 +125,7 @@ linkPythons() {
     deactivate
     echo "Get upDir token.secret for Dropbox API" # With `read` problems, probably better enumerating after
     read -n 1
-    sudo ln -s ~/git/projects/Python/updir/updir.py /usr/bin/updir
+    ln -s ~/git/projects/Python/updir/updir.py ~/bin/updir
     echo "Installed updir"
 
     cd ../calbot
@@ -135,7 +135,7 @@ linkPythons() {
     deactivate
     echo "Get calbot credentials.json for Google API"
     read -n 1
-    sudo ln -s ~/git/projects/Python/calbot/bot.py /usr/bin/calbot
+    ln -s ~/git/projects/Python/calbot/bot.py ~/bin/calbot
     echo "Installed calbot"
     cd
 }
