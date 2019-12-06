@@ -29,4 +29,4 @@ fi
 PATH="$HOME/.cargo/bin:$HOME/.nimble/bin:$PATH"
 PATH="$HOME/.cargo/bin:$PATH"
 PATH="$HOME/.perl6/bin:/opt/rakudo-pkg/bin:/opt/rakudo-pkg/share/perl6/site/bin:$PATH"
-export $PATH
+export PATH
