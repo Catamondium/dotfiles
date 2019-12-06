@@ -26,3 +26,6 @@ else
 fi
 
 ### END SSH AGENT ###
+
+. ~/.profile
+. ~/.bashrc
