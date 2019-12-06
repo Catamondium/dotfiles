@@ -106,7 +106,8 @@ dirgit="$white$bold\w$reset$purple\$(parse_git_branch)$white"
 export PS1="$CHROOT$usrhost:$dirgit\\$> $reset"
 export PATH="$HOME/.cargo/bin:$HOME/.nimble/bin:$PATH"
 
+PATH="$HOME/.cargo/bin:$HOME/.nimble/bin:$PATH"
+PATH="$HOME/.cargo/bin:$PATH"
+PATH="$HOME/.perl6/bin:/opt/rakudo-pkg/bin:/opt/rakudo-pkg/share/perl6/site/bin:$PATH"
+export PATH
 
-export INTELFPGAOCLSDKROOT="/home/liambirtles/intelFPGA_pro/19.3/hld"
-
-export QSYS_ROOTDIR="/home/liambirtles/intelFPGA_pro/19.3/qsys/bin"
