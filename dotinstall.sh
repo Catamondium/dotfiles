@@ -111,6 +111,7 @@ linkCs() {
     gcc onexit.c
     mv ./a.out ~/bin/onexit
     echo "Installed onexit"
+    cd
 }
 
 forcePython3() {
@@ -165,6 +166,7 @@ init() {
 }
 
 init
+linkCs
 linkRusts
 linkPythons
 linkBash
