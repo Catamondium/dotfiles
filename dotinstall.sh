@@ -106,6 +106,13 @@ linkRusts() {
     cd
 }
 
+linkCs() {
+    cd ~/git/projects/C
+    gcc onexit.c
+    mv ./a.out ~/bin/onexit
+    echo "Installed onexit"
+}
+
 forcePython3() {
     sudo apt install python3-venv
     sudo cp /usr/bin/python3 /usr/bin/python
