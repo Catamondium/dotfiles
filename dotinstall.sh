@@ -70,7 +70,9 @@ linkBash() {
     if [ -f ~/.profile ] ; then
         mv ~/.profile ~/profile.bak
     fi
+
     ln -s ~/git/dotfiles/bash/profile.sh ~/.profile
+    ln -s ~/git/dotfiles/bash/process ~/bin/process
 
     echo "Prepared aliases & bashrc & bash_profile"
 }

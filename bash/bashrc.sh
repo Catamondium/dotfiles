@@ -111,3 +111,7 @@ PATH="$HOME/.perl6/bin:/opt/rakudo-pkg/bin:/opt/rakudo-pkg/share/perl6/site/bin:
 PATH="$HOME/bin:$PATH"
 export PATH
 
+
+#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
+export SDKMAN_DIR="/home/liambirtles/.sdkman"
+[[ -s "/home/liambirtles/.sdkman/bin/sdkman-init.sh" ]] && source "/home/liambirtles/.sdkman/bin/sdkman-init.sh"
