@@ -15,14 +15,14 @@ fixGnome() {
 prelude() {
     echo "PRELUDE"
     echo "Setup git over ssh"
-    read -n 1
+    #read -n 1
 
     if ! [ $( command -v python3 ) ] ; then
         if ! [ $( command -v apt )] ; then
             echo "Install Python3 & py3 venv"
-            read -n 1
+            #read -n 1
         else # Self serve on apt-based systems (Ubuntu / Pop_os)
-            sudo apt install python3 python3-venv
+            sudo apt install -y python3 python3-venv
         fi
     fi
 
@@ -117,8 +117,9 @@ linkCs() {
 }
 
 forcePython3() {
-    sudo apt install python3-venv
+    sudo apt install -y python3-venv
     sudo cp /usr/bin/python3 /usr/bin/python
+    ln -s /usr/bin/python3 ~/bin/py
     echo "Forced Python3"
 }
 
@@ -139,7 +140,7 @@ linkPythons() {
     pip install -r requirements
     deactivate
     echo "Get upDir token.secret for Dropbox API" # With `read` problems, probably better enumerating after
-    read -n 1
+    #read -n 1
     ln -s ~/git/projects/Python/updir/updir.py ~/bin/updir
     echo "Installed updir"
 
@@ -149,7 +150,7 @@ linkPythons() {
     pip install -r requirements
     deactivate
     echo "Get calbot credentials.json for Google API"
-    read -n 1
+    #read -n 1
     ln -s ~/git/projects/Python/calbot/bot.py ~/bin/calbot
     echo "Installed calbot"
     cd
