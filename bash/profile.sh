@@ -16,14 +16,27 @@ if [ -n "$BASH_VERSION" ]; then
     fi
 fi
 
+function path_concat() {
+    case ":$PATH:" in
+        *":$1:"*) :;; # already there
+        *) PATH="$1:$PATH";; # or PATH="$PATH:$1"
+    esac
+}
+
 # set PATH so it includes user's private bin if it exists
 if [ -d "$HOME/bin" ] ; then
-    PATH="$HOME/bin:$PATH"
+    path_concat "$HOME/bin"
 fi
 
 # set PATH so it includes user's private bin if it exists
 if [ -d "$HOME/.local/bin" ] ; then
-    PATH="$HOME/.local/bin:$PATH"
+    path_concat "$HOME/.local/bin"
 fi
 
-export PATH="$HOME/.cargo/bin:$PATH"
+path_concat "$HOME/.cargo/bin:$HOME/.nimble/bin"
+path_concat "$HOME/.cargo/bin"
+path_concat "$HOME/.perl6/bin:/opt/rakudo-pkg/bin:/opt/rakudo-pkg/share/perl6/site/bin"
+path_concat "$HOME/bin"
+
+path_concat "$HOME/.cargo/bin"
+export PATH

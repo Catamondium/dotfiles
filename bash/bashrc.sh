@@ -105,12 +105,6 @@ dirgit="$white$bold\w$reset$purple\$(parse_git_branch)$white"
 
 export PS1="$CHROOT$usrhost:$dirgit\\$> $reset"
 
-PATH="$HOME/.cargo/bin:$HOME/.nimble/bin:$PATH"
-PATH="$HOME/.cargo/bin:$PATH"
-PATH="$HOME/.perl6/bin:/opt/rakudo-pkg/bin:/opt/rakudo-pkg/share/perl6/site/bin:$PATH"
-PATH="$HOME/bin:$PATH"
-export PATH
-
 
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 export SDKMAN_DIR="/home/liambirtles/.sdkman"
