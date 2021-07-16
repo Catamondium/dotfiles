@@ -5,4 +5,4 @@ dedupdir -r ./stuff
 find ./stuff -mindepth 2 -type f -exec mogrify -resize x1080\< {} \;
 dedupdir -r ./stuff
 rname -r -f ./stuff
-updir ./stuff,/stuff
+updir --sync ./stuff,/stuff

@@ -109,3 +109,4 @@ export PS1="$CHROOT$usrhost:$dirgit\\$> $reset"
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 export SDKMAN_DIR="/home/liambirtles/.sdkman"
 [[ -s "/home/liambirtles/.sdkman/bin/sdkman-init.sh" ]] && source "/home/liambirtles/.sdkman/bin/sdkman-init.sh"
+PYTHON=python3
