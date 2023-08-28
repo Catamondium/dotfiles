@@ -33,10 +33,4 @@ if [ -d "$HOME/.local/bin" ] ; then
     path_concat "$HOME/.local/bin"
 fi
 
-path_concat "$HOME/.cargo/bin:$HOME/.nimble/bin"
-path_concat "$HOME/.cargo/bin"
-path_concat "$HOME/.perl6/bin:/opt/rakudo-pkg/bin:/opt/rakudo-pkg/share/perl6/site/bin"
-path_concat "$HOME/bin"
-
-path_concat "$HOME/.cargo/bin"
 export PATH

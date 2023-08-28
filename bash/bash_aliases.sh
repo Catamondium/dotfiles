@@ -3,7 +3,6 @@
 # accident prevention
 alias rm='rm -i'
 alias mv='mv -i'
-alias cropdir='cropdir -i'
 # ls aliases
 alias ll='ls -alF'
 alias la='ls -A'
@@ -12,3 +11,10 @@ alias l='ls -CF'
 alias lua='lua5.3'
 alias g++='g++-8 -std=c++17'
 alias indent='indent -kr'
+alias python='python3'
+
+# utility aliases
+alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
+
+# program setup
+alias jrnl-nano='jrnl --config-override editor nano'
