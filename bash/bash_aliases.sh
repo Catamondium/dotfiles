@@ -1,5 +1,9 @@
 #!/bin/bash
 
+# games
+alias uwu='fortune | fudd'
+
+
 # accident prevention
 alias rm='rm -i'
 alias mv='mv -i'

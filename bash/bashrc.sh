@@ -19,7 +19,8 @@ else
 fi
 
 # ENV
-PYTHON=python3
+#PYTHON=python3
+export HISTIGNORE="$HISTIGNORE:jrnl*"    # jrnl protection, alias inclusive
 
 ### pallete
 red="\[`tput setaf 1`\]"
@@ -35,7 +36,7 @@ parse_git_branch() {
 	git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/'
 }
 
-usrhost="$reset$cyan\u$white@$purple\h"
-dirgit="$cyan$bold\w$reset$purple\$(parse_git_branch)$white"
+usrhost="$reset$bold$cyan\u$reset$white@$purple\h$reset"
+dirgit="$cyan$bold\w$reset$bold$purple\$(parse_git_branch)$reset$white"
 
 export PS1="$CHROOT$usrhost:$dirgit\\$> $reset"
