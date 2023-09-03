@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/sh -x
 
 # USAGE notes
 # read -n 1, doesn't always work
