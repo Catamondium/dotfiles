@@ -30,6 +30,11 @@ cyan="\[`tput setaf 6`\]"
 bold="\[`tput bold`\]"
 reset="\[`tput sgr0`\]"
 
+### functions
+random-corpus() {
+	cat $1 | tr '[[:punct:][:space:]]' '\n' | sed '/^[[:space:]]*$/d' | shuf -n "${2:-10}"
+}
+
 ### PS1 override
 
 parse_git_branch() {
