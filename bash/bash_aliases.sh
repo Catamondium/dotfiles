@@ -10,6 +10,7 @@ alias jrnl-rand='jrnl -not @random --format txt | sed -e '/^[[:space:]]*$/d' -e 
 # accident prevention
 alias rm='rm -i'
 alias mv='mv -i'
+alias cp='cp -i'
 
 # ls aliases
 alias ll='ls -alF'
@@ -28,5 +29,7 @@ alias jrnl-nano='jrnl --config-override editor nano'
 alias jrnl-mp='jrnl --config-override editor mousepad'
 
 # utility aliases
+alias dud='du -d 1 -h'
+alias duf='du -sh'
 alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
 alias upgrade-all='sudo apt -y update; sudo apt -y upgrade; sudo snap refresh; python3 -m pipx upgrade-all'
