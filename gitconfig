@@ -6,5 +6,6 @@
 	fixup = !git commit --fixup ${1:-HEAD}
 	oneline = !git log --abbrev-commit --oneline
 	edited = !git show $1 --pretty='' --name-only
+	alias = !git config --get-regexp ^alias
 [init]
 	defaultBranch = main
