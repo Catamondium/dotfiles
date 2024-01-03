@@ -44,5 +44,5 @@ parse_git_branch() {
 usrhost="$reset$bold$cyan\u$reset$white@$purple\h$reset"
 dirgit="$cyan$bold\w$reset$bold$purple\$(parse_git_branch)$reset$white"
 
-export PS1="$CHROOT$usrhost:$dirgit\\$> $reset"
+export PS1="$CHROOT$usrhost:$dirgit $redλ$reset> $reset"
 shopt -s globstar

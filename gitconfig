@@ -1,0 +1,10 @@
+[rebase]
+	autosquash = true
+[alias]
+	resetorigin = !git fetch origin && git reset --hard origin/master && git clean -f -d
+	resetupstream = !git fetch upstream && git reset --hard upstream/master && git clean -f -d
+	fixup = !git commit --fixup ${1:-HEAD}
+	oneline = !git log --abbrev-commit --oneline
+	edited = !git show $1 --pretty='' --name-only
+[init]
+	defaultBranch = main
