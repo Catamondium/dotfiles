@@ -35,6 +35,10 @@ random-corpus() {
 	cat $1 | tr '[[:punct:][:space:]]' '\n' | sed '/^[[:space:]]*$/d' | shuf -n "${2:-10}"
 }
 
+lna() {
+    ln -s $(realpath $1) $2
+}
+
 ### PS1 override
 
 parse_git_branch() {
