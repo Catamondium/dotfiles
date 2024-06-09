@@ -30,6 +30,9 @@ alias py='python3'
 alias js='node'
 alias ts='ts-node'
 
+# TCL experimentation
+alias tclsh='rlwrap tclsh'
+
 # scratchpads
 alias tmp_clear='rm -drf /tmp/sandbox'
 alias tmppy='install -Db <(echo -e "#!/usr/bin/env python3\n")  /tmp/sandbox/main.py; cd /tmp/sandbox'
@@ -43,5 +46,8 @@ alias jrnl-mp='jrnl --config-override editor mousepad'
 # utility aliases
 alias dud='du -d 1 -h'
 alias duf='du -sh'
+alias hgrep='history | grep'
 alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
 alias upgrade-all='sudo apt -y update; sudo apt -y upgrade; sudo snap refresh; python3 -m pipx upgrade-all'
+
+alias securerandom='openssl rand'

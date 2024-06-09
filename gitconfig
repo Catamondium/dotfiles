@@ -7,5 +7,8 @@
 	oneline = !git log --abbrev-commit --oneline
 	edited = !git show $1 --pretty='' --name-only
 	alias = !git config --get-regexp ^alias
+	tree = !git log --graph --pretty=oneline --abbrev-commit "${@}"
 [init]
 	defaultBranch = main
+[fetch]
+	prune = true
