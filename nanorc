@@ -1,0 +1,4 @@
+# 4 space tabbing
+set tabsize 4
+set tabstospaces
+set autoindent
